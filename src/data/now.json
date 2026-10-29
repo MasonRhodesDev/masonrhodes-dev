@@ -1,5 +1,15 @@
 [
-  { "label": "Shipping", "text": "A Wayland desktop, built from small separately versioned parts." },
-  { "label": "Designing", "text": "Something for Rootshed." },
-  { "label": "Printing", "text": "Better connectors for tube marble runs." }
+  {
+    "label": "Shipping",
+    "text": "A Wayland desktop, built from small separately versioned parts."
+  },
+  {
+    "label": "Designing",
+    "text": "Something for Rootshed."
+  },
+  {
+    "label": "Printing",
+    "text": "Better connectors for tube marble runs, for my kids.",
+    "art": "marble"
+  }
 ]

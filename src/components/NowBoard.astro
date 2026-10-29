@@ -1,11 +1,15 @@
 ---
 import now from '../data/now.json';
+import MarbleRun from './MarbleRun.astro';
 ---
 <dl class="now" aria-label="What I am working on now">
   {now.map((n) => (
     <div class="line">
       <dt class="label"><span class="dot" aria-hidden="true"></span>{n.label}</dt>
-      <dd>{n.text}</dd>
+      <dd class:list={['text', { withArt: n.art }]}>
+        <span>{n.text}</span>
+        {n.art === 'marble' && <MarbleRun />}
+      </dd>
     </div>
   ))}
 </dl>
@@ -15,6 +19,7 @@ import now from '../data/now.json';
   .line + .line { border-top: 1px solid var(--color-outline); }
   dt { display: flex; align-items: center; gap: var(--space-2); }
   dd { margin: 0; }
+  .withArt { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); }
   .dot { width: .5rem; height: .5rem; background: var(--color-accent); border-radius: 50%; animation: pulse 2.4s ease-in-out infinite; }
   @keyframes pulse { 50% { opacity: .25; } }
   @media (max-width: 34rem) { .line { grid-template-columns: 1fr; gap: var(--space-1); } }

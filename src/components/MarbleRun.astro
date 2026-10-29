@@ -1,0 +1,29 @@
+<svg class="marble-run" viewBox="0 0 170 60" role="img" aria-label="A marble rolling down a tube past a printed connector, on a loop">
+  <path class="tube-wall" d="M6 10 L78 28 L128 28 L164 50" />
+  <path class="tube-bore" d="M6 10 L78 28 L128 28 L164 50" />
+  <rect class="joint" x="74" y="20" width="10" height="16" rx="1.5" transform="rotate(14 79 28)" />
+  <rect class="joint" x="124" y="20" width="10" height="16" rx="1.5" />
+  <circle class="marble" r="5" />
+</svg>
+<style>
+  .marble-run { width: 10.5rem; height: auto; display: block; overflow: visible; }
+  .tube-wall { fill: none; stroke: var(--color-ink); stroke-width: 13; stroke-linejoin: round; stroke-linecap: round; }
+  .tube-bore { fill: none; stroke: var(--color-surface); stroke-width: 10; stroke-linejoin: round; stroke-linecap: round; }
+  .joint { fill: var(--color-accent); stroke: var(--color-ink); stroke-width: 1.5; }
+  .marble {
+    fill: var(--color-ink); stroke: var(--color-accent); stroke-width: 2;
+    offset-path: path("M6 10 L78 28 L128 28 L164 50");
+    offset-rotate: 0deg;
+    offset-distance: 0%;
+    animation: roll 3.2s cubic-bezier(.45, .05, .8, .6) infinite;
+  }
+  @keyframes roll {
+    0% { offset-distance: 0%; opacity: 0; }
+    6% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marble { animation: none; offset-distance: 38%; opacity: 1; }
+  }
+</style>
