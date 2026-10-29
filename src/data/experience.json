@@ -3,7 +3,7 @@
   "blurb": "a telehealth company",
   "role": "Software Architect",
   "since": 2021,
-  "summary": "I build the platform other engineers deploy through, and I own technical standards and cross-squad design, including the build-versus-buy calls. Backend and distributed systems at heart, with a TypeScript and Node home base.",
+  "summary": "I build the platform other engineers deploy through, and I own technical standards and cross-squad design. Backend and distributed systems at heart, with a TypeScript and Node home base.",
   "impact": [
     {
       "title": "Developer platform",
