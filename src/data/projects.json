@@ -37,6 +37,28 @@
     "requireReachable": true
   },
   {
+    "name": "hypr-DE",
+    "url": "https://github.com/MasonRhodesDev/hypr-DE",
+    "blurb": "An alpha Wayland desktop composed from small, separately versioned parts.",
+    "tags": [
+      "Wayland",
+      "Hyprland",
+      "Packaging"
+    ],
+    "featured": true,
+    "problem": "A desktop assembled from dozens of tools drifts apart, and nobody can say which part owns what.",
+    "how": "hypr-DE is a Wayland desktop built from small, separately versioned repos. Machine-readable registries define who owns what, and releases ship as signed Arch and Fedora packages.",
+    "proof": "Alpha, and honest about it: the supporting tools stabilize first.",
+    "media": {
+      "still": "media/hypr-de.png",
+      "video": {
+        "webm": "media/hypr-de.webm",
+        "mp4": "media/hypr-de.mp4"
+      },
+      "alt": "The hypr-DE desktop: a terminal, a launcher opening a file manager, a workspace switch, and a live light and dark theme toggle."
+    }
+  },
+  {
     "name": "hyprstate",
     "url": "https://github.com/MasonRhodesDev/hyprstate",
     "blurb": "Hyprland session state machine covering lid, monitor profiles, lock, suspend, and USB wake.",
@@ -48,6 +70,28 @@
     "problem": "Lid, monitors, lock, suspend and USB wake all fight over the same session, and each fix breaks another.",
     "how": "One event-sourced state machine over Hyprland, logind and UPower, with a reconciler that re-asserts the hard invariants.",
     "proof": "Effects are isolated from a pure transition function, so the logic is testable."
+  },
+  {
+    "name": "dials",
+    "url": "https://github.com/MasonRhodesDev/dials",
+    "blurb": "A native settings app for hyprstate monitor profiles.",
+    "tags": [
+      "Rust",
+      "Slint",
+      "Wayland"
+    ],
+    "featured": true,
+    "problem": "Monitor layouts on Wayland are config files you edit blind.",
+    "how": "dials is a native Slint app. Drag monitors into place, set mode, scale and rotation, and it writes the monitor profiles that hyprstate applies.",
+    "proof": null,
+    "media": {
+      "still": "media/dials.png",
+      "video": {
+        "webm": "media/dials.webm",
+        "mp4": "media/dials.mp4"
+      },
+      "alt": "The dials Displays page: two monitors dragged into a new arrangement, then the page flips between dark and light."
+    }
   },
   {
     "name": "hyprhands",
