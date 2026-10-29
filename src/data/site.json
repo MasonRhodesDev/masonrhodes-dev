@@ -1,0 +1,17 @@
+{
+  "name": "Mason Rhodes",
+  "role": "Software architect",
+  "tagline": "I build developer tooling, Linux desktop software, and the infrastructure underneath it.",
+  "description": "Portfolio of Mason Rhodes: software architect, open source tinkerer.",
+  "links": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/MasonRhodesDev"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:mrhodesdev@gmail.com"
+    }
+  ],
+  "source": "https://github.com/MasonRhodesDev/masonrhodes-dev"
+}

@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import site from '../../data/site.json';
+---
+<Base title="About">
+  <div class="stack">
+    <h1>About</h1>
+    <p>{site.tagline}</p>
+    <p>
+      I work as a software architect. Most of my open source work is Linux desktop and
+      developer tooling: a Wayland desktop built from small, separately versioned parts,
+      with specs and decision records kept next to the code.
+    </p>
+    <p>
+      I favor small units with clear boundaries, configuration over hardcoding, and writing
+      down why a decision was made so the next change keeps its intent.
+    </p>
+    <ul class="links">
+      {site.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+    </ul>
+  </div>
+</Base>
+<style>
+  h1 { font-size: var(--text-xl); }
+  .links { display: flex; gap: var(--space-6); list-style: none; padding: 0; }
+</style>

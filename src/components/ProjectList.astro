@@ -1,0 +1,11 @@
+---
+import ProjectCard from './ProjectCard.astro';
+interface Props { items: { name: string; url: string; blurb: string; tags: string[] }[]; }
+const { items } = Astro.props;
+---
+<ul class="grid">
+  {items.map((p) => <ProjectCard {...p} />)}
+</ul>
+<style>
+  .grid { display: grid; gap: var(--space-3); padding: 0; margin: 0; }
+</style>

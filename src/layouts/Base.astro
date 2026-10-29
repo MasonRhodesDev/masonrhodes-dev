@@ -1,0 +1,48 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import site from '../data/site.json';
+
+interface Props { title?: string; description?: string; }
+const { title, description = site.description } = Astro.props;
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.role}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)" />
+    <script is:inline>
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader />
+    <main id="main" class="container">
+      <slot />
+    </main>
+    <footer class="container no-print">
+      <small class="muted">&copy; {new Date().getFullYear()} {site.name}. <a href={site.source}>Source</a></small>
+    </footer>
+  </body>
+</html>
+<style>
+  main { padding-block: var(--space-12); }
+  footer { padding-block: var(--space-8); }
+</style>

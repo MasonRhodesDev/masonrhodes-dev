@@ -1,0 +1,29 @@
+<button type="button" class="theme-toggle no-print" aria-label="Toggle color theme" data-theme-toggle>
+  <span aria-hidden="true">◐</span>
+</button>
+<script>
+  const root = document.documentElement;
+  const read = () => {
+    try { return localStorage.getItem('theme'); } catch { return null; }
+  };
+  const write = (value: string) => {
+    try { localStorage.setItem('theme', value); } catch {}
+  };
+  const stored = read();
+  if (stored) root.dataset.theme = stored;
+  document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+    const dark = root.dataset.theme
+      ? root.dataset.theme === 'dark'
+      : matchMedia('(prefers-color-scheme: dark)').matches;
+    const next = dark ? 'light' : 'dark';
+    root.dataset.theme = next;
+    write(next);
+  });
+</script>
+<style>
+  .theme-toggle {
+    background: none; border: 1px solid var(--color-outline); color: var(--color-text);
+    width: 2.25rem; height: 2.25rem; border-radius: var(--radius-pill); cursor: pointer; font-size: 1.1rem;
+  }
+  .theme-toggle:hover { background: var(--color-surface-raised); }
+</style>

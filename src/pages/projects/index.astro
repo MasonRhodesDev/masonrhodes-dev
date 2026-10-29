@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectList from '../../components/ProjectList.astro';
+import projects from '../../data/projects.json';
+---
+<Base title="Projects" description="Open source projects by Mason Rhodes.">
+  <div class="stack">
+    <h1>Projects</h1>
+    <p class="muted">Open source work, newest thinking first. Everything links to its source.</p>
+    <ProjectList items={projects} />
+  </div>
+</Base>
+<style>h1 { font-size: var(--text-xl); }</style>

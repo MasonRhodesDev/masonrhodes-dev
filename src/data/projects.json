@@ -1,0 +1,12 @@
+[
+  { "name": "Vigil", "url": "https://github.com/MasonRhodesDev/vigil", "blurb": "A multi-monitor, themeable greetd greeter that renders straight to KMS/DRM with Slint, no compositor required.", "tags": ["Rust", "Slint", "Wayland"], "featured": true },
+  { "name": "hyprstate", "url": "https://github.com/MasonRhodesDev/hyprstate", "blurb": "Hyprland session state machine covering lid, monitor profiles, lock, suspend, and USB wake.", "tags": ["Rust", "Hyprland"], "featured": true },
+  { "name": "hyprhands", "url": "https://github.com/MasonRhodesDev/hyprhands", "blurb": "Fast, safe hands on a Hyprland desktop for agent loops: capture, accessibility tree, input, and owner takeover detection.", "tags": ["Rust", "Agents"], "featured": true },
+  { "name": "open-comfort-engine", "url": "https://github.com/MasonRhodesDev/open-comfort-engine", "blurb": "Thermostats that learn how warm people like it from too hot / too cold votes, and drift toward idle to save energy.", "tags": ["TypeScript", "Node-RED", "Spec"], "featured": true },
+  { "name": "slint-kit", "url": "https://github.com/MasonRhodesDev/slint-kit", "blurb": "Shared Slint theme and widgets fed by Material You colors.", "tags": ["Rust", "Slint"], "featured": false },
+  { "name": "linux-multi-theme-toggle", "url": "https://github.com/MasonRhodesDev/linux-multi-theme-toggle", "blurb": "High-performance async theme switching for Hyprland desktops with Material You color schemes.", "tags": ["Rust", "Wayland"], "featured": false },
+  { "name": "marble-run-parts", "url": "https://github.com/MasonRhodesDev/marble-run-parts", "blurb": "Connector spec and OpenSCAD library for tube marble run sets.", "tags": ["OpenSCAD", "3D printing"], "featured": false },
+  { "name": "pm-loop", "url": "https://github.com/MasonRhodesDev/pm-loop", "blurb": "A PM loop workflow for coordinating AI coding agents.", "tags": ["Agents", "Workflow"], "featured": false },
+  { "name": "sni-watcher", "url": "https://github.com/MasonRhodesDev/sni-watcher", "blurb": "Standalone StatusNotifierWatcher daemon that keeps tray items alive across status bar restarts.", "tags": ["Rust", "D-Bus"], "featured": false },
+  { "name": "steam-notes", "url": "https://github.com/MasonRhodesDev/steam-notes", "blurb": "Notes on Steam client internals: shortcut appids, CEF debugging, flatpak pitfalls, SteamOS persistence.", "tags": ["Docs", "Steam"], "featured": false }
+]
