@@ -1,4 +1,10 @@
 ---
+import '@fontsource/big-shoulders-display/700';
+import '@fontsource/big-shoulders-display/900';
+import '@fontsource/ibm-plex-sans/400';
+import '@fontsource/ibm-plex-sans/600';
+import '@fontsource/jetbrains-mono/400';
+import '@fontsource/jetbrains-mono/500';
 import '../styles/tokens.css';
 import '../styles/base.css';
 import SiteHeader from '../components/SiteHeader.astro';
@@ -22,8 +28,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f3f1ed" media="(prefers-color-scheme: light)" />
     <script is:inline>
       try {
         var t = localStorage.getItem('theme');
@@ -38,11 +44,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <footer class="container no-print">
-      <small class="muted">&copy; {new Date().getFullYear()} {site.name}. <a href={site.source}>Source</a></small>
+      <small class="label">&copy; {new Date().getFullYear()} {site.name} &middot; <a href={site.source}>Source</a></small>
     </footer>
   </body>
 </html>
 <style>
-  main { padding-block: var(--space-12); }
-  footer { padding-block: var(--space-8); }
+  footer { padding-block: var(--space-8); border-top: var(--rule) solid var(--color-ink); }
 </style>

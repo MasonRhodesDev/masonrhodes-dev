@@ -3,11 +3,16 @@ import Base from '../../layouts/Base.astro';
 import ProjectList from '../../components/ProjectList.astro';
 import projects from '../../data/projects.json';
 ---
-<Base title="Projects" description="Open source projects by Mason Rhodes.">
-  <div class="stack">
-    <h1>Projects</h1>
-    <p class="muted">Open source work, newest thinking first. Everything links to its source.</p>
+<Base title="Open source" description="Open source projects by Mason Rhodes.">
+  <div class="page">
+    <p class="label">The bench</p>
+    <h1>Open source</h1>
+    <p class="prose muted">Everything links to its source.</p>
     <ProjectList items={projects} />
   </div>
 </Base>
-<style>h1 { font-size: var(--text-xl); }</style>
+<style>
+  .page { display: grid; gap: var(--space-6); padding-block: var(--space-12) var(--space-16); }
+  h1 { font-size: clamp(2.4rem, 1rem + 6vw, 4.5rem); }
+  .prose { max-width: var(--prose); }
+</style>

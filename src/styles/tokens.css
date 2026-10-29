@@ -1,74 +1,67 @@
 :root {
   color-scheme: light dark;
 
-  --ref-neutral-99: #fbfbfa;
-  --ref-neutral-95: #f1f2f4;
-  --ref-neutral-90: #e3e5e8;
-  --ref-neutral-40: #5c6370;
-  --ref-neutral-10: #1b1d21;
-  --ref-primary-40: #2557d6;
-  --ref-primary-80: #7aa2ff;
-  --ref-dark-surface: #14161a;
-  --ref-dark-container: #1b1e24;
-  --ref-dark-outline: #2a2e36;
+  --ref-concrete-98: #f3f1ed;
+  --ref-concrete-100: #fbfaf8;
+  --ref-concrete-85: #d9d5cc;
+  --ref-concrete-45: #6a665f;
+  --ref-concrete-10: #1d1c1a;
+  --ref-orange-50: #d9480f;
+  --ref-orange-60: #ff7a3d;
+  --ref-night-10: #141311;
+  --ref-night-15: #1c1b18;
+  --ref-night-25: #33312c;
 
-  --space-1: .25rem;
-  --space-2: .5rem;
-  --space-3: .75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem; --space-12: 3rem; --space-16: 4rem; --space-24: 6rem;
 
-  --radius-sm: .375rem;
-  --radius-md: .625rem;
-  --radius-pill: 999px;
+  --radius-sm: 2px;
 
-  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+  --font-display: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 
   --text-sm: .875rem;
   --text-md: 1.0625rem;
   --text-lg: 1.25rem;
-  --text-xl: clamp(1.75rem, 1.2rem + 2.5vw, 2.75rem);
+  --text-xl: clamp(1.9rem, 1.2rem + 3vw, 3rem);
+  --text-hero: clamp(3rem, 1rem + 9vw, 7rem);
 
-  --measure: 46rem;
-  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-accent) 45%, transparent);
+  --measure: 64rem;
+  --prose: 40rem;
+  --rule: 3px;
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-accent) 55%, transparent);
 }
 
 :root,
 :root[data-theme="light"] {
-  --color-page: var(--ref-neutral-99);
-  --color-surface: #ffffff;
-  --color-surface-raised: var(--ref-neutral-95);
-  --color-text: var(--ref-neutral-10);
-  --color-text-muted: var(--ref-neutral-40);
-  --color-outline: var(--ref-neutral-90);
-  --color-accent: var(--ref-primary-40);
+  --color-page: var(--ref-concrete-98);
+  --color-surface: var(--ref-concrete-100);
+  --color-ink: var(--ref-concrete-10);
+  --color-text-muted: var(--ref-concrete-45);
+  --color-outline: var(--ref-concrete-85);
+  --color-accent: var(--ref-orange-50);
   --color-on-accent: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --color-page: var(--ref-dark-surface);
-    --color-surface: var(--ref-dark-container);
-    --color-surface-raised: #232730;
-    --color-text: #e8eaed;
-    --color-text-muted: #9aa1ad;
-    --color-outline: var(--ref-dark-outline);
-    --color-accent: var(--ref-primary-80);
-    --color-on-accent: #0c1220;
+    --color-page: var(--ref-night-10);
+    --color-surface: var(--ref-night-15);
+    --color-ink: #ece9e2;
+    --color-text-muted: #9c978c;
+    --color-outline: var(--ref-night-25);
+    --color-accent: var(--ref-orange-60);
+    --color-on-accent: #1a0b03;
   }
 }
 
 :root[data-theme="dark"] {
-  --color-page: var(--ref-dark-surface);
-  --color-surface: var(--ref-dark-container);
-  --color-surface-raised: #232730;
-  --color-text: #e8eaed;
-  --color-text-muted: #9aa1ad;
-  --color-outline: var(--ref-dark-outline);
-  --color-accent: var(--ref-primary-80);
-  --color-on-accent: #0c1220;
+  --color-page: var(--ref-night-10);
+  --color-surface: var(--ref-night-15);
+  --color-ink: #ece9e2;
+  --color-text-muted: #9c978c;
+  --color-outline: var(--ref-night-25);
+  --color-accent: var(--ref-orange-60);
+  --color-on-accent: #1a0b03;
 }

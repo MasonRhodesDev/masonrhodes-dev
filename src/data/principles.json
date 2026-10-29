@@ -1,0 +1,6 @@
+[
+  { "title": "Write down why", "text": "Every repo keeps decision records, so the next change keeps the intent.", "href": "https://github.com/MasonRhodesDev/vigil/blob/main/DESIGN.md", "link": "Example: Vigil design doc" },
+  { "title": "Clone it and run it", "text": "No machine names in the repo. Config comes in through one door and defaults are generic.", "href": null, "link": null },
+  { "title": "Buy before build", "text": "Match industry-trusted systems before designing something bespoke.", "href": null, "link": null },
+  { "title": "Read the source", "text": "Summaries are pointers, not facts.", "href": "https://github.com/MasonRhodesDev/steam-notes", "link": "Example: Steam internals notes" }
+]

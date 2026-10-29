@@ -1,32 +1,76 @@
 ---
 import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import NowBoard from '../components/NowBoard.astro';
+import StatRow from '../components/StatRow.astro';
 import ProjectList from '../components/ProjectList.astro';
+import ShopTile from '../components/ShopTile.astro';
 import site from '../data/site.json';
+import experience from '../data/experience.json';
+import studio from '../data/studio.json';
+import shop from '../data/shop.json';
+import principles from '../data/principles.json';
 import projects from '../data/projects.json';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const featured = projects.filter((p) => p.featured);
 ---
 <Base>
-  <section class="hero stack">
-    <p class="muted role">{site.role}</p>
-    <h1>{site.name}</h1>
-    <p class="lead muted">{site.tagline}</p>
-    <ul class="links">
-      {site.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
-    </ul>
+  <section class="hero">
+    <p class="label">{site.tagline}</p>
+    <h1>{site.headline}</h1>
+    <p class="intro muted">{site.intro}</p>
+    <div class="actions">
+      <a class="button" href={`mailto:${site.email}`}>{site.email}</a>
+      <a class="button ghost" href={site.github}>GitHub</a>
+    </div>
+    <NowBoard />
   </section>
 
-  <section class="stack">
-    <h2>Featured projects</h2>
+  <Section title="The day job" label={`${experience.company} / since ${experience.since}`} id="day-job">
+    <p class="prose"><strong>{experience.role}</strong> at {experience.company}, {experience.blurb}. {experience.summary}</p>
+    <StatRow stats={experience.stats} />
+    <p><a href={`${base}/experience/`}>The full story</a></p>
+  </Section>
+
+  <Section title={studio.name} label="One-person app studio" id="rootshed">
+    <p class="prose big">{studio.statement}</p>
+    <p class="label">{studio.status}</p>
+  </Section>
+
+  <Section title="The bench" label="Open source, shipped" id="bench">
+    <p class="prose muted">A Wayland desktop built from small, separately versioned parts, each with a spec and decision records beside the code.</p>
     <ProjectList items={featured} />
-    <p><a href={`${base}/projects/`}>All projects</a></p>
-  </section>
+    <p><a href={`${base}/projects/`}>Everything else on the bench</a></p>
+  </Section>
+
+  <Section title="The shop" label="Things I build with my hands" id="shop">
+    <p class="prose muted">The apps exist because of the garage: bikes that need logs, a printer that needs tuning, a marble run that needs better connectors, and a cluster that runs the house.</p>
+    <ul class="tiles">{shop.map((s) => <ShopTile {...s} />)}</ul>
+  </Section>
+
+  <Section title="How I work" label="Four rules" id="how">
+    <ul class="rules">
+      {principles.map((p) => (
+        <li>
+          <h3>{p.title}</h3>
+          <p class="muted">{p.text}</p>
+          {p.href && <p><a href={p.href} rel="noopener">{p.link}</a></p>}
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section title="Say hello" label="Contact" id="contact">
+    <p class="prose big">Got a thing that needs building, or a system that needs untangling? Write me. Ask and I will send the full resume.</p>
+    <p><a class="button" href={`mailto:${site.email}`}>{site.email}</a></p>
+  </Section>
 </Base>
 <style>
-  .hero { margin-bottom: var(--space-16); }
-  h1 { font-size: var(--text-xl); }
-  .role { font: var(--text-sm) var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
-  .lead { font-size: var(--text-lg); max-width: 36rem; }
-  .links { display: flex; gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
-  h2 { font-size: var(--text-lg); }
+  .hero { display: grid; gap: var(--space-6); padding-block: var(--space-16) var(--space-12); }
+  .intro { font-size: var(--text-lg); max-width: 36rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .big { font-size: var(--text-lg); color: var(--color-ink); }
+  .tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: var(--space-6); }
+  .rules { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--space-6); }
+  .rules h3 { margin-bottom: var(--space-2); }
 </style>

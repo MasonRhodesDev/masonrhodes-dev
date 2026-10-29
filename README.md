@@ -8,7 +8,7 @@ Static portfolio site built with [Astro](https://astro.build), deployed to GitHu
     npm run dev       # http://localhost:4321
     npm run build     # output in dist/
 
-Edit `src/data/projects.json` to change the project list and `src/pages/index.astro` for copy.
+Content lives in `src/data/*.json`. See `DESIGN.md`.
 
 ## Deploy
 

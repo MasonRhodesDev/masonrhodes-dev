@@ -1,0 +1,6 @@
+[
+  { "title": "Dirt bikes", "text": "A small fleet that needs maintenance logs, and gets them." },
+  { "title": "3D printing", "text": "An Ender 3 running Klipper, tuned until it stops complaining." },
+  { "title": "Marble runs", "text": "A connector spec and an OpenSCAD library, so parts from different sets finally fit." },
+  { "title": "Home lab", "text": "A small cluster that runs the house, built to be rebuilt." }
+]

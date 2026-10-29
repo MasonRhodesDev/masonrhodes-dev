@@ -14,13 +14,12 @@ A static portfolio site. It has no runtime, no backend, and no client framework.
 
 | Path | Role |
 |------|------|
-| `src/data/site.json` | Name, role, tagline, links. The identity boundary. |
-| `src/data/projects.json` | Project list. `featured` projects appear on the home page. |
+| `src/data/*.json` | All content: `site` (identity), `now`, `experience`, `studio`, `shop`, `principles`, `projects`. Pages render from these. |
 | `src/styles/tokens.css` | Layered tokens: `--ref-*` raw values, `--color-*` semantic roles, then spacing, radius, type. |
 | `src/styles/base.css` | Reset, layout primitives, skip link, print rules. Uses semantic tokens only. |
 | `src/components/` | Small units: header, theme toggle, project card, project list. |
 | `src/layouts/Base.astro` | Document shell, metadata, no-flash theme bootstrap. |
-| `src/pages/` | Routes: home, projects, about, 404. |
+| `src/pages/` | Routes: home (seven scenes), experience, projects, 404. |
 
 ## Token layers
 

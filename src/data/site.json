@@ -1,17 +1,11 @@
 {
   "name": "Mason Rhodes",
   "role": "Software architect",
-  "tagline": "I build developer tooling, Linux desktop software, and the infrastructure underneath it.",
-  "description": "Portfolio of Mason Rhodes: software architect, open source tinkerer.",
-  "links": [
-    {
-      "label": "GitHub",
-      "href": "https://github.com/MasonRhodesDev"
-    },
-    {
-      "label": "Email",
-      "href": "mailto:mrhodesdev@gmail.com"
-    }
-  ],
+  "headline": "I build the thing under the thing.",
+  "tagline": "Software architect by day. Rootshed by night. Garage always.",
+  "intro": "Identity systems, release pipelines, desktop plumbing, and the apps I make for people who work with their hands.",
+  "description": "Mason Rhodes is a software architect and the maker behind Rootshed. Identity, developer platforms, Linux desktop software, and a very busy garage.",
+  "email": "me@masonrhodes.dev",
+  "github": "https://github.com/MasonRhodesDev",
   "source": "https://github.com/MasonRhodesDev/masonrhodes-dev"
 }
