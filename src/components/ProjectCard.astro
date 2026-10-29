@@ -1,8 +1,15 @@
 ---
-interface Props { name: string; url: string; blurb: string; tags: string[]; }
-const { name, url, blurb, tags } = Astro.props;
+interface Props { name: string; url: string; blurb: string; tags: string[]; media?: { still: string; motion?: string; alt: string }; }
+const { name, url, blurb, tags, media } = Astro.props;
+const src = (f: string) => `${import.meta.env.BASE_URL}${f}`.replace(/\/{2,}/g, '/');
 ---
 <li class="card">
+  {media && (
+    <picture>
+      {media.motion && <source media="(prefers-reduced-motion: reduce)" srcset={src(media.still)} />}
+      <img src={src(media.motion ?? media.still)} alt={media.alt} loading="lazy" decoding="async" />
+    </picture>
+  )}
   <h3><a href={url} rel="noopener">{name}</a></h3>
   <p class="muted">{blurb}</p>
   <ul class="tags" aria-label="Technologies">
@@ -12,6 +19,8 @@ const { name, url, blurb, tags } = Astro.props;
 <style>
   .card { list-style: none; position: relative; background: var(--color-surface); border: 1px solid var(--color-ink); padding: var(--space-4) var(--space-6); transition: transform .15s ease, box-shadow .15s ease; }
   .card:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--color-accent); }
+  picture { display: block; margin: calc(var(--space-4) * -1) calc(var(--space-6) * -1) var(--space-4); border-bottom: 1px solid var(--color-ink); }
+  img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
   h3 { margin-bottom: var(--space-2); }
   h3 a { text-decoration: none; }
   h3 a::after { content: ""; position: absolute; inset: 0; }

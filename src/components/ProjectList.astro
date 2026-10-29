@@ -1,6 +1,6 @@
 ---
 import ProjectCard from './ProjectCard.astro';
-interface Props { items: { name: string; url: string; blurb: string; tags: string[] }[]; }
+interface Props { items: { name: string; url: string; blurb: string; tags: string[]; media?: { still: string; motion?: string; alt: string } }[]; }
 const { items } = Astro.props;
 ---
 <ul class="grid">
