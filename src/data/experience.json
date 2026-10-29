@@ -1,47 +1,85 @@
 {
   "company": "LifeMD",
   "blurb": "a telehealth company",
-  "role": "Software Architect, Engineering Foundations lead",
-  "since": 2022,
-  "summary": "I own technical standards and cross-squad system design, and I am the tiebreaker on build-versus-buy. Before the architect role I shipped across every layer of the platform.",
+  "role": "Software Architect",
+  "since": 2021,
+  "summary": "I build the platform other engineers deploy through, and I own technical standards and cross-squad design, including the build-versus-buy calls. Backend and distributed systems at heart, with a TypeScript and Node home base.",
   "impact": [
     {
-      "title": "Identity",
-      "text": "An org-wide single sign-on standard, and an enterprise identity service speaking SAML and SCIM."
-    },
-    {
       "title": "Developer platform",
-      "text": "An edge proxy, canary releases, and a reusable CI/CD template with audit-ready merge rules that other teams adopt in minutes."
+      "text": "Self-service feature-branch deployments on golden paths, a live Envoy edge, and a release controller built as a leader-elected, multi-replica state machine."
     },
     {
-      "title": "Patient onboarding",
-      "text": "A visual flow builder with conditional logic, used across four care programs."
+      "title": "Delivery",
+      "text": "A reusable CI/CD platform on Kubernetes that other teams adopt with almost no setup, with audit-ready repository governance and automated releases."
     },
     {
-      "title": "Pharmacy",
-      "text": "Integration design, plus the fix for a major prescription renewals bug."
+      "title": "Identity and APIs",
+      "text": "An org-wide single sign-on standard, and a versioned public API with one code generator emitting TypeScript, PHP and MCP targets."
+    },
+    {
+      "title": "Standards",
+      "text": "The RFC and architecture-review process, a strict type-safety rule for maintained services, and mentoring across squads."
+    }
+  ],
+  "jobs": [
+    {
+      "company": "LifeMD",
+      "role": "Software Architect",
+      "dates": "Nov 2021 to now",
+      "where": "Remote",
+      "note": "Promoted from Senior Full-Stack Node Engineer III, to Lead Full-Stack Node Engineer, to Software Architect.",
+      "bullets": [
+        "Built the internal developer platform and graduated it from prototype to production as project lead.",
+        "Hardened rollout safety with drift reporting, scheduled health checks, failure hooks and partial-deploy recovery.",
+        "Served as release manager for a large cross-team integration rollout.",
+        "Represent engineering in vendor and partner technical engagements, and own cross-squad system design."
+      ]
+    },
+    {
+      "company": "Getac",
+      "role": "Software Developer",
+      "dates": "Jul 2017 to Nov 2021",
+      "where": "Irvine",
+      "note": null,
+      "bullets": [
+        "Introduced continuous automated testing and container image builds, and managed cloud deployments and networking.",
+        "Built a federated GraphQL service for the repair lifecycle, with role-based scopes isolating customer data.",
+        "Built an OIDC provider for internal and external single sign-on, federating the corporate directory.",
+        "Rewrote a recursive bill-of-materials builder as an iterative algorithm, ending production crashes on large lists."
+      ]
+    },
+    {
+      "company": "BrooksNetworks",
+      "role": "Field Technician",
+      "dates": "2014 to 2017",
+      "where": "Huntington Beach",
+      "note": null,
+      "bullets": [
+        "Wrote deployment scripts and group-policy automation that cut server setup time at new client sites."
+      ]
     }
   ],
   "timeline": [
     {
-      "year": "2022",
-      "text": "Physician case management, patient flow framework, feature flags, auth foundations."
+      "year": "2026",
+      "text": "Became Software Architect."
     },
     {
       "year": "2023",
-      "text": "Pharmacy integration design, authentication refactor, offer systems."
+      "text": "Became Lead Full-Stack Node Engineer."
     },
     {
-      "year": "2024",
-      "text": "Flow builder across care programs, platform maturation."
+      "year": "2021",
+      "text": "Joined LifeMD as a Senior Full-Stack Node Engineer."
     },
     {
-      "year": "2025",
-      "text": "Enterprise identity service, analytics platform, pharmacy performance work."
+      "year": "2017",
+      "text": "Joined Getac as a Software Developer."
     },
     {
-      "year": "2026",
-      "text": "Architect and Foundations lead: SSO standard, developer platform, CI/CD template."
+      "year": "2014",
+      "text": "Started as a Field Technician at BrooksNetworks."
     }
   ]
 }

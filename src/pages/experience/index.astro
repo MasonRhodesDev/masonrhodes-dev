@@ -17,7 +17,22 @@ import site from '../../data/site.json';
       ))}
     </ul>
 
-    <h2>Year by year</h2>
+    <h2>Where I have worked</h2>
+    <ol class="jobs">
+      {experience.jobs.map((j) => (
+        <li>
+          <div class="head">
+            <h3>{j.company}</h3>
+            <p class="label">{j.dates} / {j.where}</p>
+          </div>
+          <p><strong>{j.role}</strong></p>
+          {j.note && <p class="muted">{j.note}</p>}
+          <ul>{j.bullets.map((b) => <li>{b}</li>)}</ul>
+        </li>
+      ))}
+    </ol>
+
+    <h2>Career, newest first</h2>
     <Timeline items={experience.timeline} />
 
     <p class="prose">Want the full resume? <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
@@ -29,4 +44,8 @@ import site from '../../data/site.json';
   .prose { max-width: var(--prose); }
   .impact { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--space-6); }
   .impact h3 { margin-bottom: var(--space-2); }
+  .jobs { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-8); }
+  .jobs > li { border-top: 1px solid var(--color-outline); padding-top: var(--space-4); display: grid; gap: var(--space-2); }
+  .head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+  .jobs ul { margin: var(--space-2) 0 0; padding-left: 1.1em; display: grid; gap: var(--space-1); color: var(--color-text-muted); }
 </style>
