@@ -1,7 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ProjectList from '../../components/ProjectList.astro';
-import projects from '../../data/projects.json';
+import { loadProjects } from '../../lib/projects';
+const projects = await loadProjects();
 ---
 <Base title="Open source" description="Open source projects by Mason Rhodes.">
   <div class="page">

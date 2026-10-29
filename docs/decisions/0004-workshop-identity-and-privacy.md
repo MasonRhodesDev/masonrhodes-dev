@@ -13,3 +13,6 @@ Personality is the point of a portfolio. Unreleased products and internal projec
 
 ## Consequences
 Launching a Rootshed app means adding it to `src/data/studio.json`. The contact address depends on forwarding set up at the domain registrar, which lives outside this repo.
+
+## Addendum: reachability gate
+A project with `requireReachable: true` in `src/data/projects.json` is rendered only when its repository URL answers an unauthenticated request at build time. A private repo returns an error, so it stays hidden. The deploy workflow also runs daily, so a repo that goes public appears without a push. Experience lives at an unlisted, `noindex` page with no links to it.

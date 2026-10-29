@@ -1,0 +1,45 @@
+---
+interface Props {
+  name: string; url?: string | null; tags: string[];
+  problem: string; how: string; proof?: string | null;
+  media?: { still: string; motion?: string; alt: string };
+}
+const { name, url, tags, problem, how, proof, media } = Astro.props;
+const src = (f: string) => `${import.meta.env.BASE_URL}${f}`.replace(/\/{2,}/g, '/');
+---
+<article class="showcase">
+  <div class="stage">
+    {media ? (
+      <picture>
+        {media.motion && <source media="(prefers-reduced-motion: reduce)" srcset={src(media.still)} />}
+        <img src={src(media.motion ?? media.still)} alt={media.alt} loading="lazy" decoding="async" />
+      </picture>
+    ) : (
+      <div class="poster" aria-hidden="true"><span>{name}</span></div>
+    )}
+  </div>
+  <div class="story">
+    <ul class="tags" aria-label="Technologies">{tags.map((t) => <li>{t}</li>)}</ul>
+    <h3>{url ? <a href={url} rel="noopener">{name}</a> : name}</h3>
+    <p class="problem">{problem}</p>
+    <p class="muted">{how}</p>
+    {proof && <p class="label proof">{proof}</p>}
+  </div>
+</article>
+<style>
+  .showcase { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--space-8); align-items: center; }
+  .showcase:nth-of-type(even) .stage { order: 2; }
+  .stage { border: 1px solid var(--color-ink); background: var(--color-surface); box-shadow: 6px 6px 0 var(--color-accent); }
+  img { display: block; width: 100%; height: auto; }
+  .poster { aspect-ratio: 16 / 9; display: grid; place-items: center; background: repeating-linear-gradient(135deg, var(--color-surface) 0 10px, var(--color-outline) 10px 11px); }
+  .poster span { font: 900 clamp(2rem, 6vw, 4rem)/1 var(--font-display); text-transform: uppercase; color: var(--color-ink); }
+  .story { display: grid; gap: var(--space-3); }
+  h3 { font-size: var(--text-xl); }
+  h3 a { text-decoration: none; }
+  h3 a:hover { color: var(--color-accent); }
+  .problem { font-size: var(--text-lg); line-height: 1.35; }
+  .proof { color: var(--color-accent); }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: 0; margin: 0; }
+  .tags li { list-style: none; font: 500 .72rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--color-text-muted); border: 1px solid var(--color-outline); padding: 4px 6px; }
+  @media (max-width: 52rem) { .showcase { grid-template-columns: 1fr; } .showcase:nth-of-type(even) .stage { order: 0; } }
+</style>

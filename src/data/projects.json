@@ -13,7 +13,25 @@
       "still": "media/vigil.png",
       "motion": "media/vigil.gif",
       "alt": "The Vigil greeter: a large clock above a password field, with two characters typed."
-    }
+    },
+    "problem": "Graphical Wayland greeters need a compositor, so a routine desktop upgrade can break the one thing that must never break: login.",
+    "how": "Vigil is its own display backend. One Rust binary drives every monitor straight over KMS/DRM and draws an independent, themeable scene on each.",
+    "proof": "The full login flow is tested end to end in QEMU."
+  },
+  {
+    "name": "swivel",
+    "url": "https://github.com/MasonRhodesDev/swivel",
+    "blurb": "One set of peripherals shared by several machines through a small device.",
+    "tags": [
+      "Peripherals",
+      "Audio",
+      "Peer to peer"
+    ],
+    "featured": true,
+    "problem": "Two full desks, one good headset, and every extra machine means more cables and more pairing.",
+    "how": "swivel shares one set of peripherals across several machines. There is no central node: the small device in the middle is just another peer, each device has its own authority, and a new machine joins through any existing member.",
+    "proof": "Designed through written decision records and exercised in its own test harness.",
+    "requireReachable": true
   },
   {
     "name": "hyprstate",
@@ -23,7 +41,10 @@
       "Rust",
       "Hyprland"
     ],
-    "featured": true
+    "featured": true,
+    "problem": "Lid, monitors, lock, suspend and USB wake all fight over the same session, and each fix breaks another.",
+    "how": "One event-sourced state machine over Hyprland, logind and UPower, with a reconciler that re-asserts the hard invariants.",
+    "proof": "Effects are isolated from a pure transition function, so the logic is testable."
   },
   {
     "name": "hyprhands",
@@ -33,7 +54,10 @@
       "Rust",
       "Agents"
     ],
-    "featured": true
+    "featured": true,
+    "problem": "An agent driving a desktop needs eyes and hands, without trampling the person sitting at it.",
+    "how": "Capture, accessibility tree and input over a small framed stdio protocol, with detection for when the owner takes back the mouse.",
+    "proof": null
   },
   {
     "name": "open-comfort-engine",
@@ -44,7 +68,10 @@
       "Node-RED",
       "Spec"
     ],
-    "featured": true
+    "featured": true,
+    "problem": "People know when they are too hot or too cold. They do not know what setpoint they want.",
+    "how": "Thermostats learn preferred warmth from plain votes, and drift toward idle to save energy.",
+    "proof": "A language-neutral spec, a TypeScript reference, and Node-RED nodes."
   },
   {
     "name": "slint-kit",

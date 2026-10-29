@@ -4,7 +4,7 @@ import Timeline from '../../components/Timeline.astro';
 import experience from '../../data/experience.json';
 import site from '../../data/site.json';
 ---
-<Base title="Experience" description={`${experience.role} at ${experience.company}, since ${experience.since}.`}>
+<Base title="Experience" noindex description={`${experience.role} at ${experience.company}, since ${experience.since}.`}>
   <div class="page">
     <p class="label">{experience.company} / since {experience.since}</p>
     <h1>{experience.role}</h1>
