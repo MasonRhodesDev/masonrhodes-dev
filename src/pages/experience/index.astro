@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import StatRow from '../../components/StatRow.astro';
 import Timeline from '../../components/Timeline.astro';
 import experience from '../../data/experience.json';
 import site from '../../data/site.json';
@@ -10,7 +9,6 @@ import site from '../../data/site.json';
     <p class="label">{experience.company} / since {experience.since}</p>
     <h1>{experience.role}</h1>
     <p class="prose muted">{experience.summary}</p>
-    <StatRow stats={experience.stats} />
 
     <h2>What I own</h2>
     <ul class="impact">

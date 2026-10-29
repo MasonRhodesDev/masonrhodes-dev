@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
 import NowBoard from '../components/NowBoard.astro';
-import StatRow from '../components/StatRow.astro';
 import ProjectList from '../components/ProjectList.astro';
 import ShopTile from '../components/ShopTile.astro';
 import site from '../data/site.json';
@@ -28,7 +27,6 @@ const featured = projects.filter((p) => p.featured);
 
   <Section title="The day job" label={`${experience.company} / since ${experience.since}`} id="day-job">
     <p class="prose"><strong>{experience.role}</strong> at {experience.company}, {experience.blurb}. {experience.summary}</p>
-    <StatRow stats={experience.stats} />
     <p><a href={`${base}/experience/`}>The full story</a></p>
   </Section>
 
