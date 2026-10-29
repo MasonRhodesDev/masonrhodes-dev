@@ -10,9 +10,12 @@
     ],
     "featured": true,
     "media": {
-      "still": "media/vigil.png",
-      "motion": "media/vigil.gif",
-      "alt": "The Vigil greeter: a large clock above a password field, with two characters typed."
+      "still": "media/vigil-multi.png",
+      "video": {
+        "webm": "media/vigil-multi.webm",
+        "mp4": "media/vigil-multi.mp4"
+      },
+      "alt": "Vigil running on three monitors at once, one rotated to portrait. The login panel follows the pointer from screen to screen."
     },
     "problem": "Graphical Wayland greeters need a compositor, so a routine desktop upgrade can break the one thing that must never break: login.",
     "how": "Vigil is its own display backend. One Rust binary drives every monitor straight over KMS/DRM and draws an independent, themeable scene on each.",
