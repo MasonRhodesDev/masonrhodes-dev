@@ -2,8 +2,8 @@
   {
     "title": "Write down why",
     "text": "Every repo keeps decision records, so the next change keeps the intent.",
-    "href": "https://github.com/MasonRhodesDev/vigil/blob/main/DESIGN.md",
-    "link": "Example: Vigil design doc"
+    "href": null,
+    "link": null
   },
   {
     "title": "Clone it and run it",

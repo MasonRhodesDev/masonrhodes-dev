@@ -8,7 +8,7 @@ Static portfolio site built with [Astro](https://astro.build), deployed to GitHu
     npm run dev       # http://localhost:4321
     npm run build     # output in dist/
 
-Content lives in `src/data/*.json`. See `DESIGN.md`.
+Content lives in `src/data/*.json`.
 
 ## Deploy
 
